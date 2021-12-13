@@ -29,7 +29,7 @@
 #' @rdname randomwalk
 #' @export
 #' @importFrom MASS mvrnorm
-randomwalk<-function(Narms=2,Ntrials=100,tau=0,rho=0.02,
+randomwalk<-function(Narms=2,Ntrials=100,tau=0.02,rho=0,
                      upper.bound=0.85,lower.bound=0.15){
   library(MASS)
 
