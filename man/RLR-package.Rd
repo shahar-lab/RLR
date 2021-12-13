@@ -4,13 +4,13 @@
 \name{RLR-package}
 \alias{RLR}
 \alias{RLR-package}
-\title{RLR: What the Package Does (One Line, Title Case)}
+\title{RLR - All you Need for Your Reinforcement Learning Experiment}
 \description{
-What the package does (one paragraph).
+This package provides helper function necessary for RL research.
+}
+\seealso{
+\href{https://www.shahar-lab.com/}{Computational Clinical Psychology Lab}
 }
 \author{
-\strong{Maintainer}: Ido Ben Artzi \email{ido.iba@gmail.com} (\href{https://orcid.org/
-0000-0001-5971-8613}{ORCID})
-
+Ido Ben Artzi, \email{ido.iba@gmail.com} ; Nitzan Shahar, \email{shahar.nitzan@gmail.com}
 }
-\keyword{internal}
