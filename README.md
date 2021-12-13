@@ -1,17 +1,5 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
 
 # RLR
 
@@ -19,7 +7,8 @@ The goal of RLR is to help you conduct proper RL research.
 
 ## Installation
 
-You can install the development version of RLR from [GitHub](https://github.com/) with:
+You can install the development version of RLR from
+[GitHub](https://github.com/) with:
 
 ``` r
 install.packages("devtools")
@@ -30,7 +19,7 @@ devtools::install_github("shahar-lab/RLR")
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+``` r
 library(RLR)
 ## basic example code
 R=
@@ -41,6 +30,3 @@ randomwalk(Narms=4,
            upper.bound   =0.85,
            lower.bound   =0.15)
 ```
-
-
-
