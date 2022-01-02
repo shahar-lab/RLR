@@ -7,10 +7,12 @@
 randomwalk(
   Narms = 2,
   Ntrials = 100,
-  tau = 0,
-  rho = 0.02,
+  tau = 0.02,
+  rho = 0,
   upper.bound = 0.85,
-  lower.bound = 0.15
+  lower.bound = 0.15,
+  plot = TRUE,
+  save_csv = TRUE
 )
 }
 \arguments{
@@ -25,6 +27,10 @@ randomwalk(
 \item{upper.bound}{Maximal limit of reward probability, Default: 0.85}
 
 \item{lower.bound}{Minimal limit of reward probability, Default: 0.15}
+
+\item{plot}{Whether to plot the bandits}
+
+\item{save_csv}{Whether to save the csv for your experiment}
 }
 \value{
 Returns a matrix (Ntrials X Narms) showing the reward probabilities in each trial.

@@ -6,6 +6,8 @@
 #' @param rho True correlation between all arms. default should be zero, Default: 0
 #' @param upper.bound Maximal limit of reward probability, Default: 0.85
 #' @param lower.bound Minimal limit of reward probability, Default: 0.15
+#' @param plot Whether to plot the bandits
+#' @param save_csv Whether to save the csv for your experiment
 #' @return Returns a matrix (Ntrials X Narms) showing the reward probabilities in each trial.
 #' @details The randomwalk function is responsible for generating the rewards in your experiment.
 #' Each arm has a different reward probability and it drifts along the experiment. The rational behind the drift is to maintain learning.
@@ -30,7 +32,7 @@
 #' @export
 #' @importFrom MASS mvrnorm
 randomwalk<-function(Narms=2,Ntrials=100,tau=0.02,rho=0,
-                     upper.bound=0.85,lower.bound=0.15){
+                     upper.bound=0.85,lower.bound=0.15,plot=TRUE,save_csv=TRUE){
   library(MASS)
 
 
@@ -57,6 +59,25 @@ randomwalk<-function(Narms=2,Ntrials=100,tau=0.02,rho=0,
   #add column names
   colnames(R) <- paste0("arm_", 1:Narms)
 
+  #plot
+  library(ggplot2)
+  library(tidyr)
+  library(dplyr)
+  #convert to data frame, add trial column, and convert to a lng format for ggplot
+
+  #plot
+  if (plot==TRUE){
+  R_plot      =R%>%as.data.frame()%>%mutate(trial=seq(1,dim(R)[1],1))%>%pivot_longer(!trial,names_to = 'arm', values_to='ev')
+  print(ggplot(R_plot,aes(x=trial,y=ev,color=arm))+geom_line())
+  }
+
+  if (save_csv==TRUE){
+  R=as.data.frame(R)
+  save(R,file=paste('randomwalk_',Narms,'arms_',Ntrials,'trials.rdata'))
+  write.table(t(R),file=paste('randomwalk_',Narms,'arms_',Ntrials,'trials.csv'),sep=',',row.names =FALSE,col.names=FALSE)
+  }
   return(R)
+
+
 
 }
