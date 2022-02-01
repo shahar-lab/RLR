@@ -29,7 +29,6 @@
 #' @seealso
 #'  \code{\link[MASS]{mvrnorm}}
 #' @rdname randomwalk
-#' @export
 #' @importFrom MASS mvrnorm
 randomwalk<-function(Narms=2,Ntrials=100,tau=0.02,rho=0,
                      upper.bound=0.85,lower.bound=0.15,plot=TRUE,save_csv=TRUE){
