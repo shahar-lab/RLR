@@ -1,4 +1,4 @@
-#' @title randomwalk
+#' @title randomwalk_example
 #' @description This function generates random reward probabilities for the whole experiment
 #' @param Narms Number of bandit arms, Default: 2
 #' @param Ntrials Number of trials, Default: 100
