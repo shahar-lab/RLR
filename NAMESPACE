@@ -2,11 +2,10 @@
 
 export(make_mystandata)
 export(my_posteriorplot)
-export(my_raincloud)
 export(my_xyplot)
-export(randomwalk)
 export(simulate_values)
+import(bayestestR)
 import(dplyr)
 import(ggplot2)
-import(raincloudplots)
+import(insight)
 importFrom(MASS,mvrnorm)
