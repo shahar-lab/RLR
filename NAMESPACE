@@ -2,20 +2,16 @@
 
 export(make_mystandata)
 export(my_posteriorplot)
-<<<<<<< HEAD
 export(my_raincloud)
 export(my_xyplot)
 export(randomwalk)
 export(simulate_values)
-import(dplyr)
-import(ggplot2)
-import(raincloudplots)
-=======
 export(my_xyplot)
 export(simulate_values)
+
 import(bayestestR)
 import(dplyr)
 import(ggplot2)
 import(insight)
->>>>>>> f6c651438e4968a9509e307fd7bcb68a118a30e0
 importFrom(MASS,mvrnorm)
+import(raincloudplots)
