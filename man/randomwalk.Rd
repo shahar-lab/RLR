@@ -2,7 +2,7 @@
 % Please edit documentation in R/randomwalk.R
 \name{randomwalk}
 \alias{randomwalk}
-\title{randomwalk}
+\title{randomwalk_example}
 \usage{
 randomwalk(
   Narms = 2,
