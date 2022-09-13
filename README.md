@@ -12,7 +12,7 @@ You can install the development version of RLR from
 
 ``` r
 install.packages("devtools")
-devtools::install_github("shahar-lab/RLR")
+devtools::install_github("shahar-lab/RLR",dependencies = TRUE)
 ```
 
 ## Example

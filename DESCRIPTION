@@ -13,7 +13,11 @@ Depends:
     R (>= 2.10)
 LazyData: true
 Imports: 
+<<<<<<< HEAD
     MASS,ggplot2,dplyr,raincloudplots
+=======
+    MASS,ggplot2,dplyr,bayestestR,insight
+>>>>>>> f6c651438e4968a9509e307fd7bcb68a118a30e0
 Suggests: 
     rmarkdown,
     knitr
