@@ -22,7 +22,7 @@
 
 
 
-my_posteriorplot<-function(model,variable_name,xlabel,mycolor){
+my_posteriorplot<-function(model,variable_name,xlabel,mycolor="gray"){
   library(ggplot2)
   library(insight)
   library(bayestestR)
