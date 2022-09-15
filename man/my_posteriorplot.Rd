@@ -5,7 +5,7 @@
 \alias{my_posteriorplot}
 \title{my_posteriorplot}
 \usage{
-my_posteriorplot(x, myxlabel, mycolor, myxlim, my_vline)
+my_posteriorplot(model,variable_name,xlabel,mycolor="gray")
 }
 \arguments{
 \item{x}{a vector you want to create a posterior from.}
@@ -21,7 +21,7 @@ my_posteriorplot(x, myxlabel, mycolor, myxlim, my_vline)
 % Please edit documentation in R/my_posterior_plot.R
 \name{my_posteriorplot}
 \alias{my_posteriorplot}
-\title{my_posterior_plot}
+\title{my_posteriorplot}
 \usage{
 my_posteriorplot(model, variable_name, xlabel, mycolor)
 }
@@ -33,7 +33,6 @@ my_posteriorplot(model, variable_name, xlabel, mycolor)
 \item{xlabel}{the label for the variable}
 
 \item{mycolor}{color of the density function}
->>>>>>> f6c651438e4968a9509e307fd7bcb68a118a30e0
 }
 \value{
 Returns a posterior plot
@@ -42,27 +41,15 @@ Returns a posterior plot
 This function plots a posterior
 }
 \details{
-<<<<<<< HEAD
 This function plots a posterior from your bayesian outputs.
-=======
-This function plots a posterior from your Bayesian outputs.
->>>>>>> f6c651438e4968a9509e307fd7bcb68a118a30e0
 }
 \examples{
 \dontrun{
-posterior_plot=(
-<<<<<<< HEAD
-x=param,
-myxlabel="Beta1",
-mycolor = "gray",
-myxlim = c(0,2),
-myvline= median(param)
-=======
+my_posteriorplot=(
 model=model,
 variable_name="reward_oneback",
 xlabel = "Reward Oneback"
-mycolor = "gray",
->>>>>>> f6c651438e4968a9509e307fd7bcb68a118a30e0
+mycolor = "gray"
 )
 }
 }
