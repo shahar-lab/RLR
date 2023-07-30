@@ -12,6 +12,7 @@ You can install the development version of RLR from
 
 ``` r
 install.packages("devtools")
+remotes::install_github('jorvlan/raincloudplots')
 devtools::install_github("shahar-lab/RLR",dependencies = TRUE)
 ```
 
