@@ -8,6 +8,7 @@
 #' @param lower.bound Minimal limit of reward probability, Default: 0.15
 #' @param plot Whether to plot the bandits
 #' @param save_csv Whether to save the csv for your experiment
+#' @param save_text Whether to save the text for Jspsych
 #' @return Returns a matrix (Ntrials X Narms) showing the reward probabilities in each trial.
 #' @details The randomwalk function is responsible for generating the rewards in your experiment.
 #' Each arm has a different reward probability and it drifts along the experiment. The rational behind the drift is to maintain learning.
@@ -72,8 +73,17 @@ randomwalk<-function(Narms=2,Ntrials=100,tau=0.02,rho=0,
 
   if (save_csv==TRUE){
   R=as.data.frame(R)
-  save(R,file=paste('randomwalk_',Narms,'arms_',Ntrials,'trials.rdata'))
-  write.table(t(R),file=paste('randomwalk_',Narms,'arms_',Ntrials,'trials.csv'),sep=',',row.names =FALSE,col.names=FALSE)
+  save(R,file=paste0('randomwalk_',Narms,'arms_',Ntrials,'trials.rdata'))
+
+  write.table(t(R),file=paste0('randomwalk_',Narms,'arms_',Ntrials,'trials.csv'),sep=',',row.names =FALSE,col.names=FALSE)
+  }
+
+  if(save_text==T){
+    lapply(seq_along(df), function(i) {
+      rounded_col <- round(df[[i]], 3)
+      output_string <- paste(rounded_col, collapse = ", ")
+      writeLines(output_string, con = paste0('randomwalk_',Narms,'arms_',Ntrials,"column_", i, ".txt"))
+    })
   }
   return(R)
 
