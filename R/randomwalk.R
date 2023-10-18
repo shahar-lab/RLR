@@ -64,7 +64,7 @@ randomwalk<-function(Narms=2,Ntrials=100,tau=0.02,rho=0,
   library(tidyr)
   library(dplyr)
   #convert to data frame, add trial column, and convert to a lng format for ggplot
-
+  R=as.data.frame(R)
   #plot
   if (plot==TRUE){
   R_plot      =R%>%as.data.frame()%>%mutate(trial=seq(1,dim(R)[1],1))%>%pivot_longer(!trial,names_to = 'arm', values_to='ev')
@@ -72,16 +72,15 @@ randomwalk<-function(Narms=2,Ntrials=100,tau=0.02,rho=0,
   }
 
   if (save_csv==TRUE){
-  R=as.data.frame(R)
+
   save(R,file=paste0('randomwalk_',Narms,'arms_',Ntrials,'trials.rdata'))
 
   write.table(t(R),file=paste0('randomwalk_',Narms,'arms_',Ntrials,'trials.csv'),sep=',',row.names =FALSE,col.names=FALSE)
   }
 
   if(save_text==T){
-    R=as.data.frame(R)
-    lapply(seq_along(df), function(i) {
-      rounded_col <- round(df[[i]], 3)
+    lapply(seq_along(R), function(i) {
+      rounded_col <- round(R[[i]], 3)
       output_string <- paste(rounded_col, collapse = ", ")
       writeLines(output_string, con = paste0('randomwalk_',Narms,'arms_',Ntrials,"column_", i, ".txt"))
     })
