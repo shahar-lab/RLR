@@ -32,7 +32,7 @@
 #' @rdname randomwalk
 #' @importFrom MASS mvrnorm
 randomwalk<-function(Narms=2,Ntrials=100,tau=0.02,rho=0,
-                     upper.bound=0.85,lower.bound=0.15,plot=TRUE,save_csv=TRUE){
+                     upper.bound=0.85,lower.bound=0.15,plot=TRUE,save_csv=TRUE,save_text=TRUE){
   library(MASS)
 
 
@@ -79,6 +79,7 @@ randomwalk<-function(Narms=2,Ntrials=100,tau=0.02,rho=0,
   }
 
   if(save_text==T){
+    R=as.data.frame(R)
     lapply(seq_along(df), function(i) {
       rounded_col <- round(df[[i]], 3)
       output_string <- paste(rounded_col, collapse = ", ")
