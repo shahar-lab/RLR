@@ -82,7 +82,7 @@ randomwalk<-function(Narms=2,Ntrials=100,tau=0.02,rho=0,
     lapply(seq_along(R), function(i) {
       rounded_col <- round(R[[i]], 3)
       output_string <- paste(rounded_col, collapse = ", ")
-      writeLines(output_string, con = paste0('randomwalk_',Narms,'arms_',Ntrials,"column_", i, ".txt"))
+      writeLines(output_string, con = paste0('randomwalk2_',Narms,'arms_',Ntrials,"column_", i, ".txt"))
     })
   }
   return(R)
